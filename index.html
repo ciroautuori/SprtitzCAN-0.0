@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#section1">Section 1</a>
+            <a href="#section2">Section 2</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Infused Bio Energy</h1>
+                <div class="can-container">
+                    <img src="img/Istantanea_2025-06-19_20-20-11.png" alt="Product Can" id="productCan">
+                </div>
+                <div class="flavor-selector">
+                    <button data-color="original" data-text="Original Flavor">Original</button>
+                    <button data-color="red" data-text="Flavor 1 (Red)">Flavor 1</button>
+                    <button data-color="blue" data-text="Flavor 2 (Blue)">Flavor 2</button>
+                    <button data-color="green" data-text="Flavor 3 (Green)">Flavor 3</button>
+                </div>
+                <p class="flavor-text">Original Flavor</p>
+            </div>
+        </section>
+
+        <section id="section1" class="content-section">
+            <h2>Discover Our Story</h2>
+            <div class="animated-box-container">
+                <div class="box">Box 1</div>
+                <div class="box">Box 2</div>
+                <div class="box">Box 3</div>
+            </div>
+            <p>More content to make the page scrollable...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+
+        <section id="section2" class="content-section">
+            <h2>Section Two</h2>
+            <p>This is another section to demonstrate smooth scrolling and transitions.</p>
+            <p>Content here helps to differentiate it from other sections. It's also full height.</p>
+            <p>Adding more placeholder text to ensure it fills space and requires scrolling. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec Omittunt HelloWorld dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Animated Product Site</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

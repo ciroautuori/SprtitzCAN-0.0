@@ -1,0 +1,350 @@
+/* Basic reset */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define root variables for colors and fonts for easy theming */
+:root {
+    --primary-color: #007bff; /* Placeholder primary color (a blue) */
+    --primary-color-darker: #0056b3; /* Darker version of primary for hover states */
+    --secondary-color: #6c757d; /* Placeholder secondary color (a gray) */
+    --text-color-dark: #333333;
+    --text-color-light: #f8f9fa;
+    --background-color: #ffffff;
+    --hero-background-color: #e9ecef; /* Light gray for hero background */
+    --font-primary: 'Roboto', sans-serif; /* Using Roboto as a modern placeholder */
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color-dark);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+/* Hero Section Styles - Updated with CSS Variables */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--hero-background-color); /* Updated */
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem; /* Slightly adjusted size */
+    margin-bottom: 1rem;
+    color: var(--text-color-dark); /* Updated */
+    font-weight: 700; /* Bolder for headings */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color); /* Updated */
+    max-width: 600px; /* Limit width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.can-showcase {
+    margin-bottom: 2.5rem; /* Increased margin */
+}
+
+#productCan {
+    max-width: 200px;
+    height: auto;
+    /* Remove CSS transition for transform and filter if GSAP handles hover */
+    /* transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; */
+    /* GSAP will now handle hover effects defined in script.js */
+    /* The base drop-shadow for non-hover state can remain or be set by GSAP initially */
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.1)); /* Base shadow */
+}
+
+/* Remove the #productCan:hover CSS rule if GSAP handles all hover states */
+/* #productCan:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
+} */
+
+.flavor-selectors button {
+    padding: 10px 20px; /* Increased padding */
+    margin: 5px 8px; /* Adjusted margin */
+    border: 2px solid var(--primary-color); /* Updated */
+    background-color: transparent;
+    color: var(--primary-color); /* Updated */
+    border-radius: 25px; /* Rounded buttons */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    font-weight: 600;
+}
+
+.flavor-selectors button:hover {
+    background-color: var(--primary-color); /* Updated */
+    color: var(--text-color-light); /* Updated */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.flavor-selectors button.active {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    /* Optionally, add a more distinct visual cue */
+    border-width: 3px; /* Example: thicker border */
+    transform: translateY(-2px) scale(1.05); /* Lift and slightly enlarge */
+}
+
+.hero-buttons .cta-button {
+    padding: 15px 30px; /* Increased padding */
+    background-color: var(--primary-color); /* Updated */
+    color: var(--text-color-light); /* Updated */
+    border: none;
+    border-radius: 8px; /* Slightly less rounded than flavor selectors */
+    font-size: 1.1rem; /* Increased font size */
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); /* Shadow for CTA */
+}
+
+.hero-buttons .cta-button:hover {
+    background-color: var(--primary-color-darker); /* Fixed: Use the new darker variable */
+    transform: translateY(-2px);
+}
+
+.hero-buttons .secondary-button {
+    padding: 15px 30px; /* Increased padding */
+    background-color: transparent;
+    color: var(--primary-color); /* Updated */
+    border: 2px solid var(--primary-color); /* Updated */
+    border-radius: 8px;
+    font-size: 1.1rem; /* Increased font size */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    font-weight: 600;
+}
+
+.hero-buttons .secondary-button:hover {
+    background-color: var(--primary-color); /* Updated */
+    color: var(--text-color-light); /* Updated */
+    transform: translateY(-2px);
+}
+
+/* General Content Section Styling */
+.content-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--text-color-dark);
+    font-weight: 700;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.alt-background {
+    background-color: var(--hero-background-color); /* Using the same light gray for alternating sections */
+}
+
+/* Flavors Section Specifics */
+.flavors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.flavor-item {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flavor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.flavor-item img {
+    max-width: 150px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 4px; /* If images have a border or background */
+}
+
+.flavor-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Footer placeholder */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--text-color-dark);
+    color: var(--text-color-light);
+}
+
+/* Background elements styling from previous step - no changes here, just for context */
+.hero-background-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-background-elements .star,
+.hero-background-elements .bubble {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive Design Adjustments */
+
+/* For Tablets and larger phones (e.g., landscape) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem; /* Adjust hero heading size */
+    }
+
+    .hero-content p {
+        font-size: 1.1rem; /* Adjust hero paragraph size */
+        max-width: 90%;
+    }
+
+    .hero-buttons .cta-button,
+    .hero-buttons .secondary-button {
+        padding: 12px 20px; /* Adjust button padding */
+        font-size: 0.95rem; /* Adjust button font size */
+    }
+
+    #productCan {
+        max-width: 150px; /* Smaller can on tablets */
+    }
+
+    .content-section h2 {
+        font-size: 2rem; /* Adjust section heading size */
+    }
+
+    .content-section p {
+        font-size: 1rem; /* Adjust section paragraph size */
+    }
+
+    .flavors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid item minimum size */
+        gap: 20px;
+    }
+
+    .flavor-item h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* For smaller mobile phones */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem; /* Further adjust hero heading size */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Further adjust hero paragraph size */
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+
+    .hero-buttons .cta-button,
+    .hero-buttons .secondary-button {
+        width: 80%; /* Make buttons take more width */
+        margin-bottom: 10px; /* Add space between stacked buttons */
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons .cta-button {
+        margin-right: 0; /* Remove right margin when stacked */
+    }
+
+    #productCan {
+        max-width: 120px; /* Even smaller can on small mobiles */
+    }
+
+    .flavor-selectors button {
+        padding: 8px 12px;
+        margin: 3px 5px;
+        font-size: 0.85rem;
+    }
+
+    .can-showcase {
+        margin-bottom: 1.5rem;
+    }
+
+    .content-section {
+        padding: 40px 15px; /* Adjust section padding */
+    }
+
+    .content-section h2 {
+        font-size: 1.8rem; /* Adjust section heading size */
+        margin-bottom: 25px;
+    }
+
+    .flavors-grid {
+        grid-template-columns: 1fr; /* Single column for flavor items */
+        gap: 15px;
+    }
+
+    .flavor-item {
+        padding: 15px;
+    }
+
+    .flavor-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .flavor-item img {
+        max-width: 100px;
+    }
+}
+
+/* Adjust background element animation for smaller screens in script.js if necessary,
+   though GSAP's random positioning within window.innerWidth/Height might adapt okay.
+   For simplicity, we'll assume the JS for background elements doesn't need
+   major changes for responsiveness in this step, but it's a consideration.
+*/
